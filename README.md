@@ -1,2 +1,2 @@
-# play.github.io
+# spotify-play
 Created with CodeSandbox
