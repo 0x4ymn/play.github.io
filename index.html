@@ -1,29 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="/style.css" rel="stylesheet" />
-    <title>Amour Ouf</title>
-  </head>
-  <body>
-    <h1>
-      <span class="line">And with her words she said...</span>
-      <span class="line">"I've always believed nothing is coincidence </span>
-      <span class="line">and everything happens for a reason"</span>
-    </h1>
-    <div class="spotify-container">
-      <!-- Updated Spotify embed with theme parameter and explicit height/width -->
-      <iframe
-        src="https://open.spotify.com/embed/playlist/4TqJILIR3Z85oUFBg8K5NW?utm_source=generator&theme=0"
-        width="100%"
-        height="380"
-        frameborder="0"
-        allowfullscreen=""
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy"
-      ></iframe>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amour Ouf</title>
+  <!-- CSS link with relative path (no leading slash) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Import font directly -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Inline CSS as backup in case the external file doesn't load -->
+  <style>
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Create an Apple-inspired gradient background */
+    body {
+      /* Beautiful gradient inspired by Apple wallpapers */
+      background: linear-gradient(135deg, 
+        #4776E6 0%, 
+        #8E54E9 25%, 
+        #FF4E50 50%, 
+        #F9D423 75%, 
+        #1CD8D2 100%);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+      
+      /* Modern font styling */
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    /* Gradient animation */
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Poetic heading with elegant styling */
+    h1 {
+      color: white;
+      font-weight: 300; /* Lighter font weight for elegance */
+      font-size: 2.2rem;
+      padding: 2rem 1rem;
+      text-align: center;
+      line-height: 1.6;
+      letter-spacing: 1px;
+      margin-bottom: 2.5rem;
+      text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+      font-style: italic;
+      position: relative;
+    }
+
+    /* Decorative elements for the poetic text */
+    h1::before, h1::after {
+      content: "♫";
+      font-style: normal;
+      font-size: 1.5rem;
+      opacity: 0.7;
+      position: absolute;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    h1::before {
+      top: 0;
+      left: 30%;
+    }
+
+    h1::after {
+      bottom: 0;
+      right: 30%;
+    }
+
+    /* Style for each line of the poem */
+    h1 .line {
+      display: block;
+      padding: 0.3rem 0;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Container for the Spotify player */
+    .spotify-container {
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Style the iframe with a glass-morphism effect */
+    iframe {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border-radius: 16px !important;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    iframe:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+        padding: 1.5rem 0.5rem;
+      }
+      
+      body {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    <span class="line">And with her words she said...</span>
+    <span class="line">"I've always believed nothing is coincidence </span>
+    <span class="line">and everything happens for a reason"</span>
+  </h1>
+  
+  <div class="spotify-container">
+    <iframe
+      src="https://open.spotify.com/embed/playlist/4TqJILIR3Z85oUFBg8K5NW?utm_source=generator&theme=0"
+      width="100%"
+      height="380"
+      frameborder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    ></iframe>
+  </div>
+</body>
 </html>
